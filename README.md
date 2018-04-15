@@ -19,8 +19,10 @@ $amazonProvider = new \MichaelKaefer\OAuth2\Client\Provider\Amazon([
 
 // Get authorization code
 if (!isset($_GET['code'])) {
+    // Options are optional, defaults to ['profile']
+    $options = ['profile', 'postal_code', 'payments:widget', 'payments:shipping_address', 'payments:billing_address'];
     // Get authorization URL
-    $authorizationUrl = $amazonProvider->getAuthorizationUrl();
+    $authorizationUrl = $amazonProvider->getAuthorizationUrl($options);
 
     // Get state and store it to the session
     $_SESSION['oauth2state'] = $amazonProvider->getState();
