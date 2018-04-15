@@ -33,7 +33,7 @@ class AmazonResourceOwner implements ResourceOwnerInterface
      */
     public function getId()
     {
-        return $this->getValueByKey($this->response, 'data.0.id');
+        return $this->getValueByKey($this->response, 'user_id');
     }
 
     /**
@@ -43,29 +43,27 @@ class AmazonResourceOwner implements ResourceOwnerInterface
      */
     public function getName()
     {
-        $firstName = $this->getValueByKey($this->response, 'data.0.firstName') ?: '';
-        $lastName = $this->getValueByKey($this->response, 'data.0.lastName') ?: '';
-        return $firstName . ($firstName && $lastName ? ' ' : '') . $lastName;
+        return $this->getValueByKey($this->response, 'name');
     }
 
     /**
-     * Get resource owner username
+     * Get resource owner postal code
      *
      * @return string|null
      */
-    public function getUsername()
+    public function getPostalCode()
     {
-        return null;
+        return $this->getValueByKey($this->response, 'postal_code');
     }
 
     /**
-     * Get resource owner location
+     * Get resource owner email
      *
      * @return string|null
      */
-    public function getLocation()
+    public function getEmail()
     {
-        return null;
+        return $this->getValueByKey($this->response, 'email');
     }
 
     /**

@@ -49,7 +49,7 @@ if (!isset($_GET['code'])) {
 
     // Get resource owner
     try {
-        $resourceOwner = $amazon->getResourceOwner($accessToken);
+        $resourceOwner = $amazonProvider->getResourceOwner($accessToken);
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
         exit($e->getMessage());
     }
@@ -57,6 +57,14 @@ if (!isset($_GET['code'])) {
     // Now you can store the results to session etc.
     $_SESSION['accessToken'] = $accessToken;
     $_SESSION['resourceOwner'] = $resourceOwner;
+    
+    var_dump(
+        $resourceOwner->getId(),
+        $resourceOwner->getName(),
+        $resourceOwner->getPostalCode(),
+        $resourceOwner->getEmail(),
+        $resourceOwner->toArray()
+    );
 }
 ```
 
