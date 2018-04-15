@@ -53,7 +53,7 @@ class Amazon extends AbstractProvider
      */
     protected function getDefaultScopes()
     {
-        return ['profile', 'postal_code', 'payments:widget', 'payments:shipping_address', 'payments:billing_address'];
+        return ['profile'];
     }
 
     /**
