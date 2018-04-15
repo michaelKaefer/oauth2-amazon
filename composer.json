@@ -1,0 +1,38 @@
+{
+  "name": "michaelkaefer/oauth2-amazon",
+  "description": "Amazon OAuth 2.0 support for the PHP League's OAuth 2.0 Client",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michael Käfer",
+      "email": "michael.kaefer1@gmx.at"
+    }
+  ],
+  "keywords": [
+    "php",
+    "amazon",
+    "api",
+    "oauth",
+    "oauth2",
+    "client",
+    "authorization",
+    "authentication"
+  ],
+  "require": {
+    "league/oauth2-client": "^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "mockery/mockery": "~0.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "MichaelKaefer\\OAuth2\\Client\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MichaelKaefer\\OAuth2\\Client\\Test\\": "tests/src/"
+    }
+  }
+}
